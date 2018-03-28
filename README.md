@@ -1,52 +1,45 @@
-AEM Workspace
--------------
+<img align="right" src="https://raw.github.com/cliffano/packer-kon-tiki/master/avatar.jpg" alt="Avatar"/>
 
-AEM Workspace is a simple workspace area for running multiple versions of Adobe Experience Manager (AEM).
-It provides convenient build targets and also a Tmuxinator config.
+[![Build Status](https://img.shields.io/travis/cliffano/packer-kon-tiki.svg)](http://travis-ci.org/cliffano/packer-kon-tiki)
+[![Docker Pulls Count](https://img.shields.io/docker/pulls/cliffano/kon-tiki.svg)](https://hub.docker.com/r/cliffano/kon-tiki/)
 
-Install
--------
+Packer Kon-Tiki
+---------------
 
-Clone AEM Workspace repo:
+Packer Kon-Tiki is a Packer builder of Docker image which contains the software needed to build many micro sites maintained by Cliff.
 
-    git clone https://github.com/cliffano/aem-workspace
+Installation
+------------
 
-Copy AEM jar and license files into the corresponding version directory.
-E.g. copy `AEM_6.1_Quickstart.jar` and its corresponding `license.properties` into `6.1` .
+Pull Kon-Tiki Docker image from Docker Hub:
+
+    docker pull cliffano/kon-tiki
+
+Or alternatively, you can create the Docker image:
+
+    git clone https://github.com/cliffano/packer-kon-tiki
+    cd packer-kon-tiki
+    make docker
+
+An image with `cliffano/kon-tiki` repository and `latest` tag should show up:
+
+    kabuto> docker images
+
+    REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+    cliffano/kon-tiki   latest              645eb1cde567        2 hours ago         733MB
+    ubuntu              latest              f975c5035748        3 weeks ago         112MB
 
 Usage
 -----
 
-Go to version directory:
+[AE86](https://github.com/cliffano/ae86), [Bob](https://github.com/cliffano/bob), [Hugo](https://gohugo.io/), and [ImageMagick](https://www.imagemagick.org/script/index.php) are available inside the image. Run the command using:
 
-    cd <version>
-
-Start AEM:
-
-    make start
-
-First start will take a while due to AEM initialising crx-quickstart, wait until it opens AEM login page using the default browser.
-
-Stop AEM:
-
-    CTRL+C
-
-Take a snapshot:
-
-    make snapshot
-
-It's recommended to take a snapshot after the first start so you can restore a fresh AEM installation without going through the slow initialisation process.
-
-Restore from snapshot:
-
-    make restore
-
-Run tmux:
-
-    make tools init (once-off only)
-    make tmux
-
-It gives you three workspace windows, one for each AEM version (6.0, 6.1, and 6.2).
-Each window has two panes on the right side which tails AEM's error and access logs, and a pane on the left side as your main work area.
-
-[![tmux screenshot](https://raw.github.com/cliffano/aem-workspace/master/screenshots/tmux.jpg)](https://raw.github.com/cliffano/aem-workspace/master/screenshots/tmux.jpg)
+    docker run \
+      --workdir /opt/workspace \
+      -v $(pwd):/opt/workspace \
+      -t cliffano/kon-tiki \
+      --rm \
+      kon-tiki \
+      --jar /opt/swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar \
+      --api-spec path/to/spec.yml \
+      javascript-gen
