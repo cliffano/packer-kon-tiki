@@ -12,3 +12,8 @@ package { ['ImageMagick', 'ImageMagick-devel']:
   ensure   => 'present',
   provider => 'yum',
 }
+
+include pip
+pip::install { 'awscli':
+ ensure => present,
+}
