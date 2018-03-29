@@ -15,5 +15,5 @@ package { ['ImageMagick', 'ImageMagick-devel']:
 
 include pip
 pip::install { 'awscli':
- ensure => present,
+  ensure => present,
 }
