@@ -17,3 +17,10 @@ include pip
 pip::install { 'awscli':
   ensure => present,
 }
+
+package { ['unzip', 'wget']:
+  ensure   => 'present',
+  provider => 'yum',
+} -> class { 'hashicorp::terraform':
+  version => '0.11.5',
+}
