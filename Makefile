@@ -27,4 +27,14 @@ docker:
 		packer build \
 		templates/docker-kon-tiki.json
 
-.PHONY: ci clean init deps tools docker
+docker-cred:
+	mkdir -p logs/
+	PACKER_LOG_PATH=logs/packer-kon-tiki-cred.log \
+		PACKER_LOG=1 \
+		packer build \
+		templates/docker-kon-tiki-cred.json
+
+publish:
+	docker push cliffano/kon-tiki:latest
+
+.PHONY: ci clean init deps tools docker docker-cred publish

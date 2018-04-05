@@ -4,7 +4,7 @@
   "builders": [
     {
       "type": "docker",
-      "image": "centos:centos7",
+      "image": "cliffano/kon-tiki",
       "commit": true,
       "run_command": [
         "--privileged", "-e", "container=docker", "-v", "/sys/fs/cgroup:/sys/fs/cgroup",
@@ -19,25 +19,23 @@
   ],
   "provisioners": [
     {
-      "type": "shell",
-      "script": "provisioners/puppet.sh"
-    },
-    {
       "type": "puppet-masterless",
       "prevent_sudo": true,
       "puppet_bin_dir": "/opt/puppetlabs/bin/",
+      "hiera_config_path": "conf/hiera.yaml",
       "extra_arguments": "--debug",
       "staging_directory": "/tmp/kon-tiki/",
-      "manifest_file": "provisioners/kon-tiki.pp",
+      "manifest_file": "provisioners/kon-tiki-cred.pp",
       "module_paths": [
-        "modules"
+        "modules",
+        "modules-extra"
       ]
     }
   ],
   "post-processors": [
     {
       "type": "docker-tag",
-      "repository": "cliffano/kon-tiki",
+      "repository": "cliffano/kon-tiki-cred",
       "tag": "latest",
       "only": [
         "docker"
