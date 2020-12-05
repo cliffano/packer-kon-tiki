@@ -2,7 +2,7 @@
 set -o nounset
 set -o errexit
 
-rpm -ivh --force https://yum.puppetlabs.com/puppet5/puppet-release-el-7.noarch.rpm
+rpm -ivh --force https://yum.puppetlabs.com/puppet6/puppet6-release-el-7.noarch.rpm
 yum -y install puppet-agent epel-release
 
 # Enable the rhui-REGION-rhel-server-optional to install ruby-devel

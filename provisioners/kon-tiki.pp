@@ -1,8 +1,7 @@
 include ::hugo
 
 class { 'nodejs':
-  repo_url_suffix       => '8.x',
-  nodejs_package_ensure => '8.10.0',
+  repo_url_suffix => '14.x',
 } -> package { ['bob']:
   ensure   => 'present',
   provider => 'npm',
@@ -13,9 +12,22 @@ package { ['ImageMagick', 'ImageMagick-devel']:
   provider => 'yum',
 }
 
-include pip
-pip::install { 'awscli':
-  ensure => present,
+class { 'python' :
+  version    => 'system',
+  pip        => 'present',
+  dev        => 'present',
+  virtualenv => 'present',
+  gunicorn   => 'absent',
+}
+
+python::pip { 'ansible' :
+  ensure  => latest,
+  pkgname => 'ansible',
+}
+
+python::pip { 'awscli' :
+  ensure  => latest,
+  pkgname => 'awscli',
 }
 
 package { ['unzip', 'wget']:
