@@ -2,7 +2,7 @@ include ::hugo
 
 class { 'nodejs':
   repo_url_suffix => '14.x',
-} -> package { ['bob']:
+} -> package { ['bob', 'jazz-cli']:
   ensure   => 'present',
   provider => 'npm',
 }
