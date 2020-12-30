@@ -34,5 +34,5 @@ package { ['unzip', 'wget']:
   ensure   => 'present',
   provider => 'yum',
 } -> class { 'hashicorp::terraform':
-  version => '0.11.5',
+  version => '0.12.21',
 }
