@@ -7,32 +7,30 @@ class { 'nodejs':
   provider => 'npm',
 }
 
-package { ['ImageMagick', 'ImageMagick-devel']:
+package { ['ImageMagick', 'ImageMagick-devel', 'python3']:
   ensure   => 'present',
   provider => 'yum',
 }
 
 class { 'python' :
-  version    => 'system',
-  pip        => 'present',
-  dev        => 'present',
-  virtualenv => 'present',
-  gunicorn   => 'absent',
+  version  => 'system',
+  pip      => 'latest',
+  dev      => 'latest',
+  gunicorn => 'absent',
+} -> exec { 'python3 -m pip install --upgrade pip':
+  cwd  => '/tmp',
+  path => ['/usr/bin', '/usr/sbin', '/usr/local/bin', '/usr/local/sbin'],
+} -> exec { 'python3 -m pip install ansible':
+  cwd  => '/tmp',
+  path => ['/usr/bin', '/usr/sbin', '/usr/local/bin', '/usr/local/sbin'],
+} -> exec { 'python3 -m pip install awscli':
+  cwd  => '/tmp',
+  path => ['/usr/bin', '/usr/sbin', '/usr/local/bin', '/usr/local/sbin'],
 }
 
-python::pip { 'ansible' :
-  ensure  => latest,
-  pkgname => 'ansible',
-}
-
-python::pip { 'awscli' :
-  ensure  => latest,
-  pkgname => 'awscli',
-}
-
-package { ['unzip', 'wget']:
-  ensure   => 'present',
-  provider => 'yum',
-} -> class { 'hashicorp::terraform':
-  version => '0.12.21',
+class { 'hashicorp_install':
+  packages => {
+    'packer'    => '1.7.2',
+    'terraform' => '0.15.5',
+  }
 }
