@@ -1,4 +1,6 @@
-ci: clean tools deps lint
+version ?= 1.0.0-pre.0
+
+ci: clean tools deps lint build-docker-kon-tiki
 
 clean:
 	rm -rf logs modules
@@ -20,21 +22,24 @@ lint:
 	shellcheck \
 		provisioners/*.sh
 
-docker:
+build-docker-kon-tiki:
 	mkdir -p logs/
 	PACKER_LOG_PATH=logs/packer-kon-tiki.log \
 		PACKER_LOG=1 \
+		PACKER_TMP_DIR=/tmp/packer-tmp/ \
 		packer build \
 		templates/docker-kon-tiki.json
 
-docker-cred:
+build-docker-kon-tiki-cred:
 	mkdir -p logs/
 	PACKER_LOG_PATH=logs/packer-kon-tiki-cred.log \
 		PACKER_LOG=1 \
+		PACKER_TMP_DIR=/tmp/packer-tmp/ \
 		packer build \
 		templates/docker-kon-tiki-cred.json
 
-publish:
+publish-docker-kon-tiki:
 	docker push cliffano/kon-tiki:latest
+	docker image push cliffano/kon-tiki:$(version)
 
-.PHONY: ci clean init deps tools docker docker-cred publish
+.PHONY: ci clean init deps tools build-docker-kon-tiki build-docker-kon-tiki-cred publish-docker-kon-tiki
