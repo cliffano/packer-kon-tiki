@@ -1,10 +1,11 @@
 forge 'https://forgeapi.puppetlabs.com'
 
 mod 'golja-gnupg', '1.2.3'
-mod 'inkblot-hashicorp', '1.4.0'
+mod 'igorolivei-hashicorp_install', '1.0.1'
 mod 'lwf-remote_file', '1.1.3'
+mod 'puppet/archive', '5.0.0'
 mod 'puppet-nodejs', '8.1.0'
+mod 'puppet-python', '6.0.0'
 mod 'puppetlabs/stdlib', '4.21.0'
 mod 'stahnma-epel', '1.2.2'
-mod 'stankevich-python', '1.18.2'
 mod 'zloesabo-hugo', '0.1.0'
