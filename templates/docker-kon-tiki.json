@@ -1,5 +1,6 @@
 {
   "variables": {
+    "version": "x.x.x"    
   },
   "builders": [
     {
@@ -39,6 +40,30 @@
       "type": "docker-tag",
       "repository": "cliffano/kon-tiki",
       "tag": "latest",
+      "only": [
+        "docker"
+      ]
+    },
+    {
+      "type": "docker-tag",
+      "repository": "cliffano/kon-tiki",
+      "tag": "{{user `version`}}",
+      "only": [
+        "docker"
+      ]
+    },
+    {
+      "type": "docker-tag",
+      "repository": "ghcr.io/cliffano/kon-tiki",
+      "tag": "latest",
+      "only": [
+        "docker"
+      ]
+    },
+    {
+      "type": "docker-tag",
+      "repository": "ghcr.io/cliffano/kon-tiki",
+      "tag": "{{user `version`}}",
       "only": [
         "docker"
       ]

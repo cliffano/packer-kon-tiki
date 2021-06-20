@@ -28,6 +28,7 @@ build-docker-kon-tiki:
 		PACKER_LOG=1 \
 		PACKER_TMP_DIR=/tmp/packer-tmp/ \
 		packer build \
+		-var-file=conf/docker-kon-tiki.json \
 		templates/docker-kon-tiki.json
 
 build-docker-kon-tiki-cred:
@@ -41,5 +42,7 @@ build-docker-kon-tiki-cred:
 publish-docker-kon-tiki:
 	docker push cliffano/kon-tiki:latest
 	docker image push cliffano/kon-tiki:$(version)
+	docker push ghcr.io/cliffano/kon-tiki:latest
+	docker image push ghcr.io/cliffano/kon-tiki:$(version)
 
 .PHONY: ci clean init deps tools build-docker-kon-tiki build-docker-kon-tiki-cred publish-docker-kon-tiki
