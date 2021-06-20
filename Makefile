@@ -45,4 +45,7 @@ publish-docker-kon-tiki:
 	docker push ghcr.io/cliffano/kon-tiki:latest
 	docker image push ghcr.io/cliffano/kon-tiki:$(version)
 
-.PHONY: ci clean init deps tools build-docker-kon-tiki build-docker-kon-tiki-cred publish-docker-kon-tiki
+release:
+	rtk release
+
+.PHONY: ci clean init deps tools build-docker-kon-tiki build-docker-kon-tiki-cred publish-docker-kon-tiki release
