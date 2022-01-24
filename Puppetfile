@@ -1,7 +1,7 @@
 forge 'https://forgeapi.puppetlabs.com'
 
 mod 'golja-gnupg', '1.2.3'
-mod 'igorolivei-hashicorp_install', :git => 'https://github.com/cliffano/puppet-hashicorp_install'
+mod 'igorolivei-hashicorp_install', '1.0.2'
 mod 'lwf-remote_file', '1.1.3'
 mod 'puppet/archive', '5.0.0'
 mod 'puppet-nodejs', '8.1.0'
