@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Add GH Actions release-* and publish-*
 
+### Changed
+- Upgrade node.js to 16.x
+
 ## 1.1.0 - 2021-06-20
 ### Added
 - Initial version
