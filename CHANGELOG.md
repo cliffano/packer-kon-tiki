@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Fixed
+- Fix missing write package permission for private image publishing
+
 ## 1.4.1 - 2022-01-26
 ### Fixed
 - Fix repository name for private image publishing
