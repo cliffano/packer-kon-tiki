@@ -13,7 +13,7 @@ package { ['ImageMagick', 'ImageMagick-devel']:
 }
 
 class { 'python' :
-  version  => 'latest',
+  ensure   => 'latest',
   pip      => 'latest',
   dev      => 'latest',
   gunicorn => 'absent',
