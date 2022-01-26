@@ -12,4 +12,4 @@ jobs:
           ref: main
       - uses: ./.github/actions/publish-docker-kon-tiki-private-action
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.KON_TIKI_GITHUB_TOKEN }}
