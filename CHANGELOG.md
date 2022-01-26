@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Fixed
+- Fix repository name for private image publishing
+
 ## 1.4.0 - 2022-01-26
 ### Changed
 - Separate ghcr.io registry processing to *-private resources
