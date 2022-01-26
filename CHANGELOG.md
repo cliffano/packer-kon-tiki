@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+- Separate ghcr.io registry processing to *-private resources
+
 ## 1.3.0 - 2022-01-26
 ### Changed
 - Include Ruby dependencies in Makefile deps target

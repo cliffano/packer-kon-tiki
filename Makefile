@@ -1,6 +1,6 @@
 version ?= 1.3.1-pre.0
 
-ci: clean deps lint build-docker-kon-tiki
+ci: clean deps lint build-docker-kon-tiki build-docker-kon-tiki-private
 
 clean:
 	rm -rf logs modules
@@ -30,6 +30,15 @@ build-docker-kon-tiki:
 		-var-file=conf/docker-kon-tiki.json \
 		templates/docker-kon-tiki.json
 
+build-docker-kon-tiki-private:
+	mkdir -p logs/
+	PACKER_LOG_PATH=logs/packer-kon-tiki-private.log \
+		PACKER_LOG=1 \
+		PACKER_TMP_DIR=/tmp/packer-tmp/ \
+		packer build \
+		-var-file=conf/docker-kon-tiki.json \
+		templates/docker-kon-tiki-private.json
+
 build-docker-kon-tiki-cred:
 	mkdir -p logs/
 	PACKER_LOG_PATH=logs/packer-kon-tiki-cred.log \
@@ -41,6 +50,8 @@ build-docker-kon-tiki-cred:
 publish-docker-kon-tiki:
 	docker push cliffano/kon-tiki:latest
 	docker image push cliffano/kon-tiki:$(version)
+
+publish-docker-kon-tiki-private:
 	docker push ghcr.io/cliffano/kon-tiki:latest
 	docker image push ghcr.io/cliffano/kon-tiki:$(version)
 

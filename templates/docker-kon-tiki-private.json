@@ -39,7 +39,7 @@
   "post-processors": [
     {
       "type": "docker-tag",
-      "repository": "cliffano/kon-tiki",
+      "repository": "ghcr.io/cliffano/kon-tiki",
       "tag": "latest",
       "only": [
         "docker"
@@ -47,7 +47,7 @@
     },
     {
       "type": "docker-tag",
-      "repository": "cliffano/kon-tiki",
+      "repository": "ghcr.io/cliffano/kon-tiki",
       "tag": "{{user `version`}}",
       "only": [
         "docker"
