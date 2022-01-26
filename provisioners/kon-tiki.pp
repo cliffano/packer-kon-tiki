@@ -7,7 +7,7 @@ class { 'nodejs':
   provider => 'npm',
 }
 
-package { ['ImageMagick', 'ImageMagick-devel', 'python3']:
+package { ['ImageMagick', 'ImageMagick-devel']:
   ensure   => 'present',
   provider => 'yum',
 }
