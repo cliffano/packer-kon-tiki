@@ -21,8 +21,9 @@ class { 'python' :
   cwd  => '/tmp',
   path => ['/usr/bin', '/usr/sbin', '/usr/local/bin', '/usr/local/sbin'],
 } -> exec { 'python3 -m pip install ansible':
-  cwd  => '/tmp',
-  path => ['/usr/bin', '/usr/sbin', '/usr/local/bin', '/usr/local/sbin'],
+  cwd         => '/tmp',
+  environment => ['LANG=en_US.UTF-8', 'LC_ALL=en_US.UTF-8'],
+  path        => ['/usr/bin', '/usr/sbin', '/usr/local/bin', '/usr/local/sbin'],
 } -> exec { 'python3 -m pip install awscli':
   cwd  => '/tmp',
   path => ['/usr/bin', '/usr/sbin', '/usr/local/bin', '/usr/local/sbin'],
