@@ -1,4 +1,4 @@
-name: Publish Docker Kon-Tiki
+name: Publish Docker Kon-Tiki Private
 'on':
   push:
     tags:
