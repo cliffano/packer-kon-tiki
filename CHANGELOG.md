@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Upgrade Packer to 1.7.9
 - Upgrade Terraform to 1.1.4
 
+### Fixed
+- Fix Ansible installation on Centos7
+
 ## 1.1.0 - 2021-06-20
 ### Added
 - Initial version
