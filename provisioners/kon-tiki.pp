@@ -13,14 +13,11 @@ package { ['ImageMagick', 'ImageMagick-devel']:
 }
 
 class { 'python' :
-  version  => '3.10',
+  version  => 'latest',
   pip      => 'latest',
   dev      => 'latest',
   gunicorn => 'absent',
 } -> exec { 'python3 -m pip install --upgrade pip':
-  cwd  => '/tmp',
-  path => ['/usr/bin', '/usr/sbin', '/usr/local/bin', '/usr/local/sbin'],
-} -> exec { 'python3 -m pip install ansible':
   cwd  => '/tmp',
   path => ['/usr/bin', '/usr/sbin', '/usr/local/bin', '/usr/local/sbin'],
 } -> exec { 'python3 -m pip install awscli':
