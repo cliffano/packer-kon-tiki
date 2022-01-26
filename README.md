@@ -1,7 +1,8 @@
 <img align="right" src="https://raw.github.com/cliffano/packer-kon-tiki/master/avatar.jpg" alt="Avatar"/>
 
-[![Build Status](https://img.shields.io/travis/cliffano/packer-kon-tiki.svg)](http://travis-ci.org/cliffano/packer-kon-tiki)
+[![Build Status](https://github.com/cliffano/packer-kon-tiki/workflows/CI/badge.svg)](https://github.com/cliffano/packer-kon-tiki/actions?query=workflow%3ACI)
 [![Docker Pulls Count](https://img.shields.io/docker/pulls/cliffano/kon-tiki.svg)](https://hub.docker.com/r/cliffano/kon-tiki/)
+[![Vulnerability Scanning Status](https://snyk.io/test/github/cliffano/packer-kon-tiki/badge.svg)](https://snyk.io/test/github/cliffano/packer-kon-tiki)
 
 Packer Kon-Tiki
 ---------------
