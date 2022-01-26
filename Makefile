@@ -1,4 +1,4 @@
-version ?= 1.4.2
+version ?= 1.4.3-pre.0
 
 ci: clean deps lint build-docker-kon-tiki build-docker-kon-tiki-private
 

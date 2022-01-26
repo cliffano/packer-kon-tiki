@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
         with:
-          ref: 1.4.2
+          ref: main
       - uses: ./.github/actions/publish-docker-kon-tiki-private-action
         env:
           GITHUB_TOKEN: ${{ secrets.KON_TIKI_GITHUB_TOKEN }}
