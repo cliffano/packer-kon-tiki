@@ -1,6 +1,6 @@
 version ?= 1.2.1-pre.0
 
-ci: clean tools deps lint build-docker-kon-tiki
+ci: clean deps lint build-docker-kon-tiki
 
 clean:
 	rm -rf logs modules
@@ -9,10 +9,9 @@ init:
 	mkdir -p artifacts
 
 deps:
-	r10k puppetfile install --moduledir modules --verbose
-
-tools:
-	gem install puppet-lint r10k
+	gem install bundler
+	bundle install --binstubs -j4
+	bundle exec r10k puppetfile install --moduledir modules
 
 lint:
 	puppet-lint \
@@ -48,4 +47,4 @@ publish-docker-kon-tiki:
 release:
 	rtk release
 
-.PHONY: ci clean init deps tools build-docker-kon-tiki build-docker-kon-tiki-cred publish-docker-kon-tiki release
+.PHONY: ci clean init deps build-docker-kon-tiki build-docker-kon-tiki-cred publish-docker-kon-tiki release

@@ -7,8 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+- Include Ruby dependencies in Makefile deps target
+
 ### Fixed
 - Fix publish source ref to use released version instead of main branch
+
+### Removed
+- Remove tools Makefile target
 
 ## 1.2.0 - 2022-01-26
 ### Added
