@@ -20,6 +20,9 @@ class { 'python' :
 } -> exec { 'python3 -m pip install --upgrade pip':
   cwd  => '/tmp',
   path => ['/usr/bin', '/usr/sbin', '/usr/local/bin', '/usr/local/sbin'],
+} -> exec { 'python3 -m pip install ansible':
+  cwd  => '/tmp',
+  path => ['/usr/bin', '/usr/sbin', '/usr/local/bin', '/usr/local/sbin'],
 } -> exec { 'python3 -m pip install awscli':
   cwd  => '/tmp',
   path => ['/usr/bin', '/usr/sbin', '/usr/local/bin', '/usr/local/sbin'],

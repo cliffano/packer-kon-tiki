@@ -14,7 +14,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Upgrade node.js to 16.x
 - Upgrade Packer to 1.7.9
 - Upgrade Terraform to 1.1.4
-- Set Python version to 3.10
 
 ## 1.1.0 - 2021-06-20
 ### Added
