@@ -36,10 +36,10 @@ class { 'hashicorp_install':
   }
 }
 
-exec { 'dnf install "dnf-command(config-manager)"':
-  path => ['/bin', '/usr/bin', '/sbin', '/usr/sbin'],
+exec { 'dnf install -y "dnf-command(config-manager)"':
+  path => ['/usr/bin', '/usr/sbin', '/usr/local/bin', '/usr/local/sbin'],
 } -> exec { 'dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo':
-  path => ['/bin', '/usr/bin', '/sbin', '/usr/sbin'],
+  path => ['/usr/bin', '/usr/sbin', '/usr/local/bin', '/usr/local/sbin'],
 } ->  package { ['gh']:
   ensure   => latest,
   provider => dnf,
