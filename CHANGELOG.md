@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add dnf and gh
+
 ## 1.5.0 - 2022-03-26
 ### Added
 - Add git for using terraform-kon-tiki via Git branch

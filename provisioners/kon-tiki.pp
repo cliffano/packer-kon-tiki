@@ -7,7 +7,7 @@ class { 'nodejs':
   provider => 'npm',
 }
 
-package { ['ImageMagick', 'ImageMagick-devel', 'git']:
+package { ['ImageMagick', 'ImageMagick-devel', 'git', 'dnf']:
   ensure   => 'present',
   provider => 'yum',
 }
@@ -34,4 +34,13 @@ class { 'hashicorp_install':
     'packer'    => '1.7.9',
     'terraform' => '1.1.4',
   }
+}
+
+exec { 'dnf install "dnf-command(config-manager)"':
+  path => ['/bin', '/usr/bin', '/sbin', '/usr/sbin'],
+} -> exec { 'dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo':
+  path => ['/bin', '/usr/bin', '/sbin', '/usr/sbin'],
+} ->  package { ['gh']:
+  ensure   => latest,
+  provider => dnf,
 }
