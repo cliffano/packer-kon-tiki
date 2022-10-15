@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add info script to list command versions
+
 ## 1.6.0 - 2022-09-11
 ### Added
 - Add dnf and gh
