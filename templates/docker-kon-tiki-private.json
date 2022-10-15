@@ -34,6 +34,10 @@
       "module_paths": [
         "modules"
       ]
+    },
+    {
+      "type": "shell",
+      "script": "provisioners/info.sh"
     }
   ],
   "post-processors": [
