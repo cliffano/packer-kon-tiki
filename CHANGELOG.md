@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Upgrade Terraform to 1.3.2
+- Upgrade Packer to 1.8.3
 
 ## 1.6.0 - 2022-09-11
 ### Added
