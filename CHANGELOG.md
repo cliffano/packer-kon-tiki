@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+- Upgrade node.js to 18.x
+
 ## 1.8.0 - 2023-02-05
 ### Changed
 - Upgrade Terraform to 1.3.7
