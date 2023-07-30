@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 
 ### Changed
+- Switch base OS to Ubuntu 20.04
 - Upgrade node.js to 18.x
 
 ## 1.8.0 - 2023-02-05
