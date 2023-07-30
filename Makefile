@@ -7,6 +7,8 @@ clean:
 
 init:
 	mkdir -p artifacts
+	packer -version
+	packer plugins install github.com/hashicorp/puppet
 
 deps:
 	gem install bundler
