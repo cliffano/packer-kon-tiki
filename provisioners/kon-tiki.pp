@@ -7,9 +7,8 @@ class { 'nodejs':
   provider => 'npm',
 }
 
-package { ['ImageMagick', 'ImageMagick-devel', 'git', 'dnf']:
+package { ['git', 'ImageMagick', 'ImageMagick-devel']:
   ensure   => 'present',
-  provider => 'apt',
 }
 
 class { 'python' :
