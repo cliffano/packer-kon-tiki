@@ -9,6 +9,7 @@ class { 'nodejs':
 
 package { ['git', 'ImageMagick', 'ImageMagick-devel']:
   ensure   => 'present',
+  provider => 'apt',
 }
 
 class { 'python' :
