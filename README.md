@@ -2,7 +2,7 @@
 
 [![Build Status](https://github.com/cliffano/packer-kon-tiki/workflows/CI/badge.svg)](https://github.com/cliffano/packer-kon-tiki/actions?query=workflow%3ACI)
 [![Docker Pulls Count](https://img.shields.io/docker/pulls/cliffano/kon-tiki.svg)](https://hub.docker.com/r/cliffano/kon-tiki/)
-[![Vulnerability Scanning Status](https://snyk.io/test/github/cliffano/packer-kon-tiki/badge.svg)](https://snyk.io/test/github/cliffano/packer-kon-tiki)
+[![Security Status](https://snyk.io/test/github/cliffano/packer-kon-tiki/badge.svg)](https://snyk.io/test/github/cliffano/packer-kon-tiki)
 
 Packer Kon-Tiki
 ---------------
