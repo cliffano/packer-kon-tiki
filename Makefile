@@ -1,6 +1,6 @@
 version ?= 1.8.1-pre.0
 
-ci: clean deps lint build-docker-kon-tiki build-docker-kon-tiki-private
+ci: clean init deps lint build-docker-kon-tiki build-docker-kon-tiki-private
 
 clean:
 	rm -rf logs modules
