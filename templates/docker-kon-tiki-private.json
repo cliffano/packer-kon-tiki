@@ -1,11 +1,11 @@
 {
   "variables": {
-    "version": "x.x.x"
+    "version": "x.x.x"    
   },
   "builders": [
     {
       "type": "docker",
-      "image": "ubuntu:22.04",
+      "image": "ubuntu:20.04",
       "commit": true,
       "run_command": [
         "--privileged", "-e", "container=docker", "-v", "/sys/fs/cgroup:/sys/fs/cgroup",
