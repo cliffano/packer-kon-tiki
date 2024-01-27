@@ -10,7 +10,7 @@ init:
 	packer plugins install github.com/hashicorp/puppet
 
 deps:
-	gem install bundler
+	gem install bundler -v 2.4.22
 	bundle install --binstubs -j4
 	bundle exec r10k puppetfile install --moduledir modules
 
