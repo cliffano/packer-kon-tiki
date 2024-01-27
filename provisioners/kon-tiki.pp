@@ -31,7 +31,7 @@ class { 'python' :
 
 class { 'hashicorp_install':
   packages => {
-    'packer'    => '1.8.5',
-    'terraform' => '1.3.7',
+    'packer'    => '1.10.0',
+    'terraform' => '1.7.1',
   }
 }

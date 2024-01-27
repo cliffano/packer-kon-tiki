@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+- Upgrade Terraform to 1.7.1
+- Upgrade Packer to 1.10.0
+
 ## 2.0.1 - 2023-08-01
 ### Fixed
 - Fix missing init call on publish GH Actions
