@@ -7,6 +7,7 @@ clean:
 
 init:
 	mkdir -p artifacts
+	packer plugins install github.com/hashicorp/docker
 	packer plugins install github.com/hashicorp/puppet
 
 deps:

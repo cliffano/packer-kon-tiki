@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Add temporary bundler pin to v2.4.22 to support Ruby 2.7.x
+- Add Docker plugin for Packer
 
 ### Changed
 - Upgrade Terraform to 1.7.1
