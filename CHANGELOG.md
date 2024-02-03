@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Fixed
+- Fix private package publishing error to use classic token
+
 ## 2.1.0 - 2024-01-27
 ### Added
 - Add temporary bundler pin to v2.4.22 to support Ruby 2.7.x
