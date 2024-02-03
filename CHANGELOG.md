@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Removed
+- Remove inexisting software from info script
+
 ### Fixed
 - Fix private package publishing error to use classic token
 
