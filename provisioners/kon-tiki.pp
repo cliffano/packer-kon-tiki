@@ -7,7 +7,7 @@ class { 'nodejs':
   provider => 'npm',
 }
 
-package { ['git', 'imagemagick']:
+package { ['git', 'imagemagick', 'jq']:
   ensure   => 'present',
   provider => 'apt',
 }

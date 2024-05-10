@@ -33,7 +33,7 @@ An image with `cliffano/kon-tiki` repository and `latest` tag should show up:
 Usage
 -----
 
-[AE86](https://github.com/cliffano/ae86), [Bob](https://github.com/cliffano/bob), [Hugo](https://gohugo.io/), and [ImageMagick](https://www.imagemagick.org/script/index.php) are available inside the image. Run the command using:
+[Bob](https://github.com/cliffano/bob), [Hugo](https://gohugo.io/), [ImageMagick](https://www.imagemagick.org/script/index.php), and [jq](https://jqlang.github.io/jq/),  are available inside the image. Run the command using:
 
     docker run \
       --workdir /opt/workspace \
