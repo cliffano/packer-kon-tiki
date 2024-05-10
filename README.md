@@ -40,7 +40,4 @@ Usage
       -v $(pwd):/opt/workspace \
       -t cliffano/kon-tiki \
       --rm \
-      kon-tiki \
-      --jar /opt/swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar \
-      --api-spec path/to/spec.yml \
-      javascript-gen
+      kon-tiki
