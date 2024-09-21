@@ -11,7 +11,8 @@
   tasks:
 
     - community.general.npm:
-        name:
+        name: "{{ item }}"
+        global: true
+        loop:
           - bob
           - jazz-cli
-        global: true
