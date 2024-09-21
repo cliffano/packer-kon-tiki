@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+
+  vars:
+    # Available versions: https://github.com/andrewrothstein/ansible-node/blob/main/defaults/main.yml
+    node_ver: 22.7.0
+
+  roles:
+    - andrewrothstein.node
+
+  tasks:
+
+    - community.general.npm:
+        name:
+          - bob
+          - jazz-cli
+        global: true

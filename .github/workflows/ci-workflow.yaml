@@ -3,7 +3,10 @@ name: CI
 on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v3.1.0
-    - uses: ./.github/actions/ci-action
+    - uses: actions/checkout@v4
+    - uses: cliffano/command-docker-action@v1.1.0
+      with:
+        image: cliffano/studio:1.15.0
+        command: 'make ci'

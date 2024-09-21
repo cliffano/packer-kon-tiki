@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add Packer plugins for Docker and Ansible
+
+### Changed
+- Replace Packer template format to HCL2
+- Replace Puppet with Ansible for provisioning
+
 ## 2.3.0 - 2024-05-10
 ### Added
 - Add jq

@@ -1,0 +1,7 @@
+roles:
+  - name: andrewrothstein.hashi
+  - name: andrewrothstein.node
+  - name: andrewrothstein.yq
+
+collections:
+  - name: community.general

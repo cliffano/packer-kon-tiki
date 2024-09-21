@@ -1,9 +1,12 @@
 version ?= 2.3.1-pre.0
 
-ci: clean init deps lint build-docker-kon-tiki build-docker-kon-tiki-private
+ci: clean stage deps lint build-docker-kon-tiki build-docker-kon-tiki-private
 
 clean:
-	rm -rf logs modules
+	rm -rf stage/ logs/ /tmp/packer-tmp/
+
+stage:
+	mkdir -p stage/ stage/ansible/roles/ stage/ansible/collections/
 
 init:
 	mkdir -p artifacts
@@ -11,43 +14,36 @@ init:
 	packer plugins install github.com/hashicorp/puppet
 
 deps:
-	gem install bundler -v 2.4.22
-	bundle install --binstubs -j4
-	bundle exec r10k puppetfile install --moduledir modules
+	packer plugins install github.com/hashicorp/docker 1.0.10
+	packer plugins install github.com/hashicorp/ansible 1.1.1
 
 lint:
-	puppet-lint \
-		--fail-on-warnings \
-		--no-documentation-check \
-		provisioners/*.pp
-	shellcheck \
-		provisioners/*.sh
+	echo "TODO: Ansible Lint"
+	# bundle exec puppet-lint \
+	# 	--fail-on-warnings \
+	# 	--no-documentation-check \
+	# 	provisioners/*.pp \
+	# 	modules-extra/*/manifests/langs/*.pp
+	# shellcheck \
+		# provisioners/shell/*.sh
 
 build-docker-kon-tiki:
-	mkdir -p logs/
-	PACKER_LOG_PATH=logs/packer-kon-tiki.log \
+	mkdir -p logs/ /tmp/packer-tmp/
+	PACKER_LOG_PATH=logs/packer-docker-kon-tiki.log \
 		PACKER_LOG=1 \
 		PACKER_TMP_DIR=/tmp/packer-tmp/ \
 		packer build \
 		-var-file=conf/docker-kon-tiki.json \
-		templates/docker-kon-tiki.json
+		templates/packer/docker-kon-tiki.pkr.hcl
 
 build-docker-kon-tiki-private:
-	mkdir -p logs/
-	PACKER_LOG_PATH=logs/packer-kon-tiki-private.log \
+	mkdir -p logs/ /tmp/packer-tmp/
+	PACKER_LOG_PATH=logs/packer-docker-kon-tiki-private.log \
 		PACKER_LOG=1 \
 		PACKER_TMP_DIR=/tmp/packer-tmp/ \
 		packer build \
-		-var-file=conf/docker-kon-tiki.json \
-		templates/docker-kon-tiki-private.json
-
-build-docker-kon-tiki-cred:
-	mkdir -p logs/
-	PACKER_LOG_PATH=logs/packer-kon-tiki-cred.log \
-		PACKER_LOG=1 \
-		PACKER_TMP_DIR=/tmp/packer-tmp/ \
-		packer build \
-		templates/docker-kon-tiki-cred.json
+		-var-file=conf/docker-kon-tiki-private.json \
+		templates/packer/docker-kon-tiki-private.pkr.hcl
 
 publish-docker-kon-tiki:
 	docker push cliffano/kon-tiki:latest
@@ -60,4 +56,4 @@ publish-docker-kon-tiki-private:
 release:
 	rtk release
 
-.PHONY: ci clean init deps build-docker-kon-tiki build-docker-kon-tiki-cred publish-docker-kon-tiki release
+.PHONY: ci clean stage init deps lint build-docker-kon-tiki build-docker-kon-tiki-private publish-docker-kon-tiki publish-docker-kon-tiki-private release

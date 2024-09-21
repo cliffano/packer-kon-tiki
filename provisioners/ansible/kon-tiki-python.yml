@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+
+  tasks:
+
+    - ansible.builtin.pip:
+        pkg:
+          - awscli

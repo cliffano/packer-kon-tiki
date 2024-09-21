@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+
+  roles:
+    - andrewrothstein.yq
+
+  tasks:
+
+    - ansible.builtin.apt:
+        pkg:
+          - imagemagick
+          - jq
+
+    - ansible.builtin.file:
+        path: /root/.local/bin
+        state: directory
+        mode: '0755'

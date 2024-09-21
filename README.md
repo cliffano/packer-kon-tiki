@@ -7,7 +7,7 @@
 Packer Kon-Tiki
 ---------------
 
-Packer Kon-Tiki is a Packer builder of Docker image containing the software needed to build many micro sites maintained by Studio C.
+Packer Kon-Tiki is a Packer builder of Docker image containing the software needed to build many micro sites.
 
 Installation
 ------------
