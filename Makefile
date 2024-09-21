@@ -42,7 +42,7 @@ build-docker-kon-tiki-private:
 		PACKER_LOG=1 \
 		PACKER_TMP_DIR=/tmp/packer-tmp/ \
 		packer build \
-		-var-file=conf/docker-kon-tiki-private.json \
+		-var-file=conf/docker-kon-tiki.json \
 		templates/packer/docker-kon-tiki-private.pkr.hcl
 
 publish-docker-kon-tiki:
