@@ -98,7 +98,6 @@ build {
   }
 
   provisioner "shell" {
-    repository = "ghcr.io/cliffano/kon-tiki"
     script = "provisioners/shell/info-post.sh"
   }
 
