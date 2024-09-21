@@ -13,6 +13,6 @@
     - community.general.npm:
         name: "{{ item }}"
         global: true
-        loop:
-          - bob
-          - jazz-cli
+      loop:
+        - bob
+        - jazz-cli
