@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Fixed
+- Fix call to old target init on publish workflows
+
 ## 3.0.0 - 2024-09-21
 ### Added
 - Add Packer plugins for Docker and Ansible
