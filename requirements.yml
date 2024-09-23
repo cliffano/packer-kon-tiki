@@ -1,5 +1,6 @@
 roles:
   - name: andrewrothstein.hashi
+  - name: andrewrothstein.hugo
   - name: andrewrothstein.node
   - name: andrewrothstein.yq
 

@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Re-add Hugo
+
 ## 3.0.2 - 2024-09-22
 ### Fixed
 - Fix env PATH to include provisioned software
