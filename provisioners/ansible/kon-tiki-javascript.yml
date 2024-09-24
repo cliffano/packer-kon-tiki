@@ -11,8 +11,9 @@
   tasks:
 
     - community.general.npm:
-        name: "{{ item }}"
+        name: "{{ item.name }}"
+        version: "{{ item.version }}"
         global: true
       loop:
-        - bob
-        - jazz-cli
+        - { "name": "bob", "version": "2.7.0" }
+        - { "name": "jazz-cli", "version": "1.0.0" }
