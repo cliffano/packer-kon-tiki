@@ -1,5 +1,5 @@
 ---
-name: Release Major
+name: Release Patch
 on: [workflow_dispatch]
 jobs:
   build:
