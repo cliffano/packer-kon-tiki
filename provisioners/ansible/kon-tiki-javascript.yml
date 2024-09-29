@@ -15,5 +15,5 @@
         version: "{{ item.version }}"
         global: true
       loop:
-        - { "name": "bob", "version": "3.0.0" }
+        - { "name": "bob", "version": "3.1.0" }
         - { "name": "jazz-cli", "version": "1.0.0" }
