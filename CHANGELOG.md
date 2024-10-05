@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 
 ### Added
-- Add /usr/local/node/bin/ symlink to version specific node path
+- Add /usr/local/node/ symlink to version specific node path
 
 ## 3.3.0 - 2024-09-29
 ### Changed
