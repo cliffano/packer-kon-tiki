@@ -18,13 +18,8 @@
         - { "name": "bob", "version": "3.1.0" }
         - { "name": "jazz-cli", "version": "1.0.0" }
 
-    - ansible.builtin.file:
-        path: /usr/local/node/
-        state: directory
-        mode: '0755'
-
     - name: Create symbolic link for easy access to node binaries on environments which override the PATH
       ansible.builtin.file:
-        src: "/usr/local/node-v{{ node_ver }}-linux-x64/bin/"
-        dest: /usr/local/node/bin/
+        src: "/usr/local/node-v{{ node_ver }}-linux-x64/"
+        dest: /usr/local/node/
         state: link
