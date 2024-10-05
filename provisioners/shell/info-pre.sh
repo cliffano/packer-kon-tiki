@@ -2,7 +2,7 @@
 set -o errexit
 set -o nounset
 
-export PATH=/usr/local/go/bin:/usr/local/maven/bin:/usr/local/node-v22.7.0-linux-x64/bin/:/usr/local/openjdk-jdk/bin/:/root/.cargo/bin/:$PATH
+export PATH=/usr/local/go/bin:/usr/local/maven/bin:/usr/local/node/bin/:/usr/local/openjdk-jdk/bin/:/root/.cargo/bin/:$PATH
 
 echo "****************************************"
 echo "* Provisioned software info - Pre"

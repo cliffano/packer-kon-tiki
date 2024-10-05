@@ -2,7 +2,7 @@
 set -o errexit
 set -o nounset
 
-export PATH=/usr/local/node-v22.7.0-linux-x64/bin/:$PATH
+export PATH=/usr/local/node/bin/:$PATH
 
 echo "****************************************"
 echo "* Provisioned software info - Post"

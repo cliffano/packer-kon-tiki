@@ -28,7 +28,7 @@ source "docker" "kon-tiki" {
   ]
   changes = [
     "ENV LANG en_US.UTF-8",
-    "ENV PATH /usr/local/node-v22.7.0-linux-x64/bin/:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
+    "ENV PATH /usr/local/node/bin/:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
   ]
 }
 
