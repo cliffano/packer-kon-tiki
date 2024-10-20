@@ -10,6 +10,7 @@
         pkg:
           - imagemagick
           - jq
+          - vim
 
     - ansible.builtin.file:
         path: /root/.local/bin
