@@ -17,7 +17,7 @@ variable "version" {
 }
 
 source "docker" "kon-tiki" {
-  image  = "ubuntu:22.04"
+  image  = "ubuntu:24.04"
   commit = true
   run_command = [
     "-d",
