@@ -3,5 +3,10 @@
 
   tasks:
 
-    - ansible.builtin.pip:
-        name: awscli
+    - vars:
+        pipx_pkg:
+          - awscli
+      community.general.pipx:
+        name: "{{ item }}"
+        state: latest
+      with_items: "{{ pipx_pkg }}"

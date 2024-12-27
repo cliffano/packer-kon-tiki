@@ -16,10 +16,11 @@ update-locale LANG=en_US.UTF-8
 apt clean
 
 ################################################################
-# Install Ansible and package utilities
+# Install Ansible and Python utilities
 ################################################################
 add-apt-repository --yes --update ppa:ansible/ansible
-apt install -y ansible python3-pip
+apt install -y ansible
+apt install -y python3-pip pipx
 apt clean
 
 ################################################################
