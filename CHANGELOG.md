@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+- Upgrade node.js to 22.13.0
+
 ## 3.6.0 - 2024-12-27
 ### Added
 - Add pipx
