@@ -3,7 +3,7 @@
 
   vars:
     # Available versions: https://github.com/andrewrothstein/ansible-node/blob/main/defaults/main.yml
-    node_ver: 22.13.0
+    node_ver: 23.5.0
 
   roles:
     - andrewrothstein.node
