@@ -7,7 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        set-safe-directory: ${{ github.workspace }}
+        set-safe-directory: ${{ env.GITHUB_WORKSPACE }}
     - uses: cliffano/command-docker-action@v1.1.0
       with:
         image: cliffano/studio:1.15.0

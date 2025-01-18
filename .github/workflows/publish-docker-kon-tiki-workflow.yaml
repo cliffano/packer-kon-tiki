@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          set-safe-directory: ${{ github.workspace }}
+          set-safe-directory: ${{ env.GITHUB_WORKSPACE }}
           ref: main
       - uses: ./.github/actions/publish-docker-kon-tiki-action
         env:
