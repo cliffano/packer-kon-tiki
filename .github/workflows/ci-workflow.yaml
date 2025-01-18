@@ -6,6 +6,8 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v4
+      with:
+        set-safe-directory: ${{ github.workspace }}
     - uses: cliffano/command-docker-action@v1.1.0
       with:
         image: cliffano/studio:1.15.0
