@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Upgrade node.js to 23.5.0
+- Upgrade release-action to 1.1.0
 
 ## 3.6.0 - 2024-12-27
 ### Added
