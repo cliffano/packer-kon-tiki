@@ -2,7 +2,7 @@
 set -o errexit
 set -o nounset
 
-export PATH=/root/.local/bin:/usr/local/node/bin:$PATH
+export PATH=/root/.local/bin:/root/go/bin:/usr/local/go/bin:/usr/local/node/bin:$PATH
 
 echo "****************************************"
 echo "* Provisioned software info - Post"
@@ -10,6 +10,7 @@ echo "****************************************"
 echo "PATH: $PATH"
 echo "aws version: $(aws --version)"
 echo "bob version: $(bob --version)"
+echo "checkmake version: $(checkmake --version)"
 echo "imagemagick convert version: $(convert --version)"
 echo "imagemagick mogrify version: $(mogrify --version)"
 echo "jazz-cli version: $(jazz-cli --version)"
