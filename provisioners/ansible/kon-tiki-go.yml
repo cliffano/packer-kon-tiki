@@ -2,6 +2,7 @@
 - hosts: localhost
 
   vars:
+    go_ver: 1.23.5
     hashi_apps:
       - name: packer
         ver: 1.11.2
@@ -11,6 +12,7 @@
     hugo_ver: 0.134.2
 
   roles:
+    - andrewrothstein.go
     - andrewrothstein.hashi
     - andrewrothstein.hugo
 

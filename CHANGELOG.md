@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add go installation at 1.23.5
+
 ### Fixed
 - Fix missing go path for checkmake
 
