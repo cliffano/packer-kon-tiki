@@ -41,3 +41,13 @@ Usage
       -t cliffano/kon-tiki \
       --rm \
       kon-tiki
+
+Development
+-----------
+
+Extra path should be added to the following:
+
+* provisioners/shell/info-pre.sh
+* provisioners/shell/info-post.sh
+* templates/packer/docker-kon-tiki-private.pkr.hcl
+* templates/packer/docker-kon-tiki.pkr.hcl
