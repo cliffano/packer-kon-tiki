@@ -8,6 +8,7 @@
 
     - ansible.builtin.apt:
         pkg:
+          - ffmpeg
           - imagemagick
           - jq
           - vim
