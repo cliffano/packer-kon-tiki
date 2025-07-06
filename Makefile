@@ -1,4 +1,4 @@
-version ?= 3.9.1-pre.0
+version ?= 3.10.0
 
 ci: clean stage deps lint build-docker-kon-tiki build-docker-kon-tiki-private
 
