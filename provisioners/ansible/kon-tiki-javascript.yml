@@ -17,6 +17,7 @@
       loop:
         - { "name": "bob", "version": "3.1.0" }
         - { "name": "jazz-cli", "version": "1.0.0" }
+        - { "name": "smartcrop-cli", "version": "2.0.3" }
 
     - name: Create symbolic link for easy access to node binaries on environments which override the PATH
       ansible.builtin.file:

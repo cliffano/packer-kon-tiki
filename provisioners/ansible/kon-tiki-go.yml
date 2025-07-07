@@ -19,4 +19,3 @@
   tasks:
 
     - ansible.builtin.command: go install github.com/mrtazz/checkmake/cmd/checkmake@latest
-    - ansible.builtin.command: go install github.com/muesli/smartcrop/cmd/smartcrop@latest
