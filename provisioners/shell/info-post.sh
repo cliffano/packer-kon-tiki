@@ -20,6 +20,7 @@ echo "node.js version: $(node --version)"
 echo "npm version: $(npm --version)"
 echo "npx version: $(npx --version)"
 echo "packer version: $(packer version)"
-echo "smartcrop version: $(smartcrop --version)"
+# Disabled due to smartcrop not having either version or help flag
+# echo "smartcrop version: $(smartcrop --version)"
 echo "terraform version: $(terraform version)"
 echo "yq version: $(yq --version)"
