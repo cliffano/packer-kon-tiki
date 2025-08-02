@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add dasel
+
 ## 3.11.0 - 2025-07-08
 ### Added
 - Add smartcrop
