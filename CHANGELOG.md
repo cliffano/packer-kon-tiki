@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+- Change checkmake GitHub ID from mrtazz to checkmake
+
 ## 3.12.0 - 2025-08-02
 ### Added
 - Add dasel
