@@ -2,7 +2,7 @@
 set -o errexit
 set -o nounset
 
-export PATH=/root/.local/bin:/root/go/bin:/usr/local/go/bin:/usr/local/node/bin:$PATH
+export PATH=$env_path:$PATH
 
 echo "****************************************"
 echo "* Provisioned software info - Post"

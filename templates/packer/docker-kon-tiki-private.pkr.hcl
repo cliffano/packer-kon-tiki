@@ -16,6 +16,10 @@ variable "version" {
   default = "x.x.x"
 }
 
+locals {
+  env_path = "/root/.local/bin:/root/go/bin:/usr/local/go/bin:/usr/local/node/bin"
+}
+
 source "docker" "kon-tiki" {
   image  = "ubuntu:24.04"
   commit = true

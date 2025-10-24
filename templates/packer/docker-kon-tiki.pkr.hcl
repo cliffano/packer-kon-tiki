@@ -11,6 +11,10 @@ packer {
   }
 }
 
+locals {
+  env_path = "/root/.local/bin:/root/go/bin:/usr/local/go/bin:/usr/local/node/bin"
+}
+
 variable "version" {
   type    = string
   default = "x.x.x"
@@ -28,7 +32,7 @@ source "docker" "kon-tiki" {
   ]
   changes = [
     "ENV LANG en_US.UTF-8",
-    "ENV PATH /root/.local/bin:/root/go/bin:/usr/local/go/bin:/usr/local/node/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
+    "ENV PATH ${local.env_path}"
   ]
 }
 
@@ -47,10 +51,16 @@ build {
 
   provisioner "shell" {
     script = "provisioners/shell/init.sh"
+    environment_vars = [
+      "ENV_PATH=${local.env_path}"
+    ]
   }
 
   provisioner "shell" {
     script = "provisioners/shell/info-pre.sh"
+    environment_vars = [
+      "ENV_PATH=${local.env_path}"
+    ]
   }
 
   provisioner "ansible-local" {
@@ -99,6 +109,9 @@ build {
 
   provisioner "shell" {
     script = "provisioners/shell/info-post.sh"
+    environment_vars = [
+      "ENV_PATH=${local.env_path}"
+    ]
   }
 
   post-processor "docker-tag" {
