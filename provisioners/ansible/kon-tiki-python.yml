@@ -3,6 +3,10 @@
 
   tasks:
 
+    - ansible.builtin.apt:
+        pkg:
+          - python3-venv
+
     - community.general.pipx:
         name: "{{ item }}"
         state: latest
