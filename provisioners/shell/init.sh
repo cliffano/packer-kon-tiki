@@ -2,7 +2,7 @@
 set -o errexit
 set -o nounset
 
-export PATH=$env_path:$PATH
+export PATH=$ENV_PATH:$PATH
 
 ################################################################
 # Common OS setup
