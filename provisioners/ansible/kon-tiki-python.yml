@@ -3,10 +3,8 @@
 
   tasks:
 
-    - vars:
-        pipx_pkg:
-          - awscli
-      community.general.pipx:
+    - community.general.pipx:
         name: "{{ item }}"
         state: latest
-      with_items: "{{ pipx_pkg }}"
+      with_items:
+        - awscli
