@@ -51,10 +51,16 @@ build {
 
   provisioner "shell" {
     script = "provisioners/shell/init.sh"
+    environment_vars = [
+      "ENV_PATH=${local.env_path}"
+    ]
   }
 
   provisioner "shell" {
     script = "provisioners/shell/info-pre.sh"
+    environment_vars = [
+      "ENV_PATH=${local.env_path}"
+    ]
   }
 
   provisioner "ansible-local" {
@@ -103,6 +109,9 @@ build {
 
   provisioner "shell" {
     script = "provisioners/shell/info-post.sh"
+    environment_vars = [
+      "ENV_PATH=${local.env_path}"
+    ]
   }
 
   post-processor "docker-tag" {
