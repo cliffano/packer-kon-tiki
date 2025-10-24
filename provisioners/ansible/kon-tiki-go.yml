@@ -2,14 +2,14 @@
 - hosts: localhost
 
   vars:
-    go_ver: 1.23.5
+    go_ver: 1.25.0
     hashi_apps:
       - name: packer
-        ver: 1.11.2
+        ver: 1.14.2
       - name: terraform
-        ver: 1.9.5
+        ver: 1.13.4
     # Available versions: https://github.com/andrewrothstein/ansible-hugo/blob/main/defaults/main.yml
-    hugo_ver: 0.134.2
+    hugo_ver: 0.146.6
 
   roles:
     - andrewrothstein.go

@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Extract environment path to a single local var and is distributed via Packer template
 - Change checkmake GitHub ID from mrtazz to checkmake
+- Upgrade Packer to 1.14.2
+- Upgrade Terraform to 1.13.4
+- Upgrade node to 24.8.0
+- Upgrade go to 1.25.0
+- Upgrade Hugo to 0.146.6
 
 ## 3.12.0 - 2025-08-02
 ### Added
