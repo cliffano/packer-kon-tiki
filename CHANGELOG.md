@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Upgrade node to 24.8.0
 - Upgrade go to 1.25.0
 - Upgrade Hugo to 0.146.6
+- Change pipx installation to use pip due to outdated pipx via Ubuntu
 
 ## 3.12.0 - 2025-08-02
 ### Added

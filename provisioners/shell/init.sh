@@ -22,8 +22,10 @@ apt clean
 ################################################################
 add-apt-repository --yes --update ppa:ansible/ansible
 apt install -y ansible
-apt install -y python3-pip pipx
+apt install -y python3-pip
 apt clean
+python3 -m pip install --user pipx --break-system-packages
+python3 -m pipx ensurepath
 
 ################################################################
 # Install Docker, adapted from
