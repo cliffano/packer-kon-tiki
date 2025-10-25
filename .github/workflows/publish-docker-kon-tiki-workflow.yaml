@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           set-safe-directory: ${{ github.workspace }}
-          ref: main
+          ref: 3.13.0
       - uses: ./.github/actions/publish-docker-kon-tiki-action
         env:
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
