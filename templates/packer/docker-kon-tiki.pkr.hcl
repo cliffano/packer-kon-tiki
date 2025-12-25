@@ -12,7 +12,7 @@ packer {
 }
 
 locals {
-  env_path = "/root/.local/bin:/root/go/bin:/usr/local/go/bin:/usr/local/node/bin"
+  env_path = "/root/.local/bin:/root/go/bin:/usr/local/go/bin:/usr/local/node/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
 }
 
 variable "version" {
