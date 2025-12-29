@@ -20,7 +20,7 @@ Or alternatively, you can create the Docker image:
 
     git clone https://github.com/cliffano/packer-kon-tiki
     cd packer-kon-tiki
-    make docker
+    make build-docker-kon-tiki
 
 An image with `cliffano/kon-tiki` repository and `latest` tag should show up:
 
