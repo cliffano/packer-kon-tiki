@@ -1,11 +1,11 @@
 packer {
   required_plugins {
     docker = {
-      version = ">= 1.0.10"
+      version = ">= 1.1.2"
       source  = "github.com/hashicorp/docker"
     }
     ansible = {
-      version = ">= 1.1.1"
+      version = ">= 1.1.4"
       source  = "github.com/hashicorp/ansible"
     }
   }
