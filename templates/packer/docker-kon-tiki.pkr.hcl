@@ -5,7 +5,7 @@ packer {
       source  = "github.com/hashicorp/docker"
     }
     ansible = {
-      version = ">= 1.1.4"
+      version = ">= 1.1.1"
       source  = "github.com/hashicorp/ansible"
     }
   }
@@ -21,7 +21,7 @@ variable "version" {
 }
 
 source "docker" "kon-tiki" {
-  image  = "ubuntu:24.04"
+  image  = "cliffano/base:0.10.0"
   commit = true
   run_command = [
     "-d",
@@ -46,13 +46,6 @@ build {
   provisioner "shell" {
     inline = [
       "mkdir -p /tmp"
-    ]
-  }
-
-  provisioner "shell" {
-    script = "provisioners/shell/init.sh"
-    environment_vars = [
-      "ENV_PATH=${local.env_path}"
     ]
   }
 

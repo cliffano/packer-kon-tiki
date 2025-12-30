@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Add Ansible lint validation
 
+### Changed
+- Switch source image to cliffano/base
+
 ## 3.14.0 - 2025-12-25
 ### Changed
 - Revert checkmake GitHub ID back to mrtazz from checkmake

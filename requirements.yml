@@ -1,9 +1,9 @@
+---
 roles:
   - name: andrewrothstein.go
   - name: andrewrothstein.hashi
   - name: andrewrothstein.hugo
   - name: andrewrothstein.node
-  - name: andrewrothstein.yq
 
 collections:
   - name: community.general

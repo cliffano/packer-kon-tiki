@@ -1,17 +1,12 @@
 ---
 - hosts: localhost
 
-  roles:
-    - andrewrothstein.yq
-
   tasks:
 
     - ansible.builtin.apt:
         pkg:
           - ffmpeg
           - imagemagick
-          - jq
-          - vim
 
     - ansible.builtin.file:
         path: /root/.local/bin
