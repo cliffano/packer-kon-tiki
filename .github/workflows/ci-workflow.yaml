@@ -5,10 +5,10 @@ jobs:
   build:
     runs-on: ubuntu-24.04
     steps:
-    - uses: actions/checkout@v6
-      with:
-        set-safe-directory: ${{ github.workspace }}
-    - uses: cliffano/command-docker-action@v1.4.0
-      with:
-        image: cliffano/studio:2.16.0
-        command: 'make ci'
+      - uses: actions/checkout@v6
+        with:
+          set-safe-directory: ${{ github.workspace }}
+      - uses: cliffano/command-docker-action@v1.4.0
+        with:
+          image: cliffano/studio:2.16.0
+          command: 'make ci'

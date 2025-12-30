@@ -1,3 +1,4 @@
+---
 name: Publish Docker Kon-Tiki
 'on':
   push:
