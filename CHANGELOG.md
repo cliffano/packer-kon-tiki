@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add Ansible lint validation
+
 ## 3.14.0 - 2025-12-25
 ### Changed
 - Revert checkmake GitHub ID back to mrtazz from checkmake
