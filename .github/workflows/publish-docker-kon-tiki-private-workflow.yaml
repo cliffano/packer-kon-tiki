@@ -6,12 +6,29 @@ name: Publish Docker Kon-Tiki Private
       - '*'
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
-          set-safe-directory: ${{ github.workspace }}
           ref: main
-      - uses: ./.github/actions/publish-docker-kon-tiki-private-action
-        env:
-          GITHUB_TOKEN: ${{ secrets.KON_TIKI_GITHUB_TOKEN_CLASSIC }}
+      - uses: docker/login-action@v4
+        with:
+          username: kontiki818
+          password: ${{ secrets.KON_TIKI_GITHUB_TOKEN_CLASSIC }}
+      - uses: cliffano/command-docker-action@v2.1.0
+        with:
+          image: cliffano/studio:3.2.0
+          shell: bash
+          extra_args: '-v ~/.docker/config.json:/root/.docker/config.json:ro'
+          command: >
+            make deps clean stage lint build-docker-kon-tiki-private &&
+
+            cat logs/packer-docker-kon-tiki-private.log &&
+
+            docker --version &&
+
+            docker info  &&
+
+            docker inspect ghcr.io/cliffano/kon-tiki &&
+
+            make publish-docker-kon-tiki-private

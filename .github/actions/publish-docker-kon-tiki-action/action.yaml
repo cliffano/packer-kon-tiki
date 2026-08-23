@@ -1,5 +1,0 @@
----
-name: 'Publish Docker Kon-Tiki'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'

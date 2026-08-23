@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Upgrade min Docker Packer Plugin to 1.1.4
 - Upgrade min Ansible Packer Plugin to 1.1.6
 - Decouple deps target from ci
+- Shift GitHub actions entrypoint to workflows
 
 ## 4.0.0 - 2025-12-30
 ### Added
