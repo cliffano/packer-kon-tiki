@@ -14,33 +14,41 @@ Installation
 
 Pull Kon-Tiki Docker image from Docker Hub:
 
-    docker pull cliffano/kon-tiki
+```shell
+docker pull cliffano/kon-tiki
+```
 
 Or alternatively, you can create the Docker image:
 
-    git clone https://github.com/cliffano/packer-kon-tiki
-    cd packer-kon-tiki
-    make build-docker-kon-tiki
+```shell
+git clone https://github.com/cliffano/packer-kon-tiki
+cd packer-kon-tiki
+make build-docker-kon-tiki
+```
 
 An image with `cliffano/kon-tiki` repository and `latest` tag should show up:
 
-    kabuto> docker images
+```text
+kabuto> docker images
 
-    REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-    cliffano/kon-tiki   latest              645eb1cde567        2 hours ago         733MB
-    ubuntu              latest              f975c5035748        3 weeks ago         112MB
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+cliffano/kon-tiki   latest              645eb1cde567        2 hours ago         733MB
+ubuntu              latest              f975c5035748        3 weeks ago         112MB
+```
 
 Usage
 -----
 
 [Bob](https://github.com/cliffano/bob), [Hugo](https://gohugo.io/), [ImageMagick](https://www.imagemagick.org/script/index.php), and [jq](https://jqlang.github.io/jq/),  are available inside the image. Run the command using:
 
-    docker run \
-      --workdir /opt/workspace \
-      -v $(pwd):/opt/workspace \
-      -t cliffano/kon-tiki \
-      --rm \
-      kon-tiki
+```shell
+docker run \
+  --workdir /opt/workspace \
+  -v $(pwd):/opt/workspace \
+  -t cliffano/kon-tiki \
+  --rm \
+  kon-tiki
+```
 
 Development
 -----------
