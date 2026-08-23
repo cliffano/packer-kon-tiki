@@ -23,8 +23,8 @@ endef
 deps:
 	python3 -m venv .venv
 	$(call python_venv,python3 -m pip install -r requirements.txt)
-	packer plugins install github.com/hashicorp/docker 1.1.2
-	packer plugins install github.com/hashicorp/ansible 1.1.4
+	packer plugins install github.com/hashicorp/docker 1.1.4
+	packer plugins install github.com/hashicorp/ansible 1.1.6
 
 deps-upgrade:
 	python3 -m venv .venv

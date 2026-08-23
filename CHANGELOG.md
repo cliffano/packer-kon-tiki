@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Upgrade AWS CLI to v2
+- Upgrade min Docker Packer Plugin to 1.1.4
+- Upgrade min Ansible Packer Plugin to 1.1.6
+- Decouple deps target from ci
 
 ## 4.0.0 - 2025-12-30
 ### Added
