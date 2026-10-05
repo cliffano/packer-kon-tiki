@@ -4,6 +4,10 @@
   vars:
     # Available versions: https://github.com/andrewrothstein/ansible-node/blob/main/defaults/main.yml
     node_ver: 24.8.0
+    # Node.js architecture names keyed by Ansible architecture
+    node_archs:
+      x86_64: x64
+      aarch64: arm64
 
   roles:
     - andrewrothstein.node
@@ -21,6 +25,6 @@
 
     - name: Create symbolic link for easy access to node binaries on environments which override the PATH
       ansible.builtin.file:
-        src: "/usr/local/node-v{{ node_ver }}-linux-x64"
+        src: "/usr/local/node-v{{ node_ver }}-linux-{{ node_archs[ansible_architecture] }}"
         dest: /usr/local/node
         state: link

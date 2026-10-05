@@ -6,7 +6,14 @@ name: Publish Docker Kon-Tiki
       - '*'
 jobs:
   build:
-    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        include:
+          - runner: ubuntu-24.04
+            arch: amd64
+          - runner: ubuntu-24.04-arm
+            arch: arm64
+    runs-on: ${{ matrix.runner }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -17,11 +24,11 @@ jobs:
           password: ${{ secrets.KONTIKI_DOCKERHUB_TOKEN }}
       - uses: cliffano/command-docker-action@v2.1.0
         with:
-          image: cliffano/studio:3.2.0
+          image: cliffano/studio:4.0.0
           shell: bash
           extra_args: '-v ~/.docker/config.json:/root/.docker/config.json:ro'
           command: >
-            make deps clean stage lint build-docker-kon-tiki &&
+            make deps clean stage lint build-docker-kon-tiki arch=${{ matrix.arch }} &&
 
             cat logs/packer-docker-kon-tiki.log &&
 
@@ -31,4 +38,14 @@ jobs:
 
             docker inspect cliffano/kon-tiki &&
 
-            make publish-docker-kon-tiki
+            make publish-docker-kon-tiki arch=${{ matrix.arch }}
+  manifest:
+    needs: build
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: docker/login-action@v4
+        with:
+          username: cliffano
+          password: ${{ secrets.KONTIKI_DOCKERHUB_TOKEN }}
+      - run: make publish-docker-kon-tiki-manifest

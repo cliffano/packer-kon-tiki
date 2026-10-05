@@ -16,13 +16,19 @@ variable "version" {
   default = "x.x.x"
 }
 
+variable "arch" {
+  type    = string
+  default = "amd64"
+}
+
 locals {
   env_path = "/root/.local/bin:/root/go/bin:/usr/local/go/bin:/usr/local/node/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
 }
 
 source "docker" "kon-tiki" {
-  image  = "cliffano/base:0.10.0"
-  commit = true
+  image    = "cliffano/base:2.0.0"
+  platform = "linux/${var.arch}"
+  commit   = true
   run_command = [
     "-d",
     "-i",
@@ -111,7 +117,7 @@ build {
     repository = "ghcr.io/cliffano/kon-tiki"
     tags        = [
       "latest",
-      var.version
+      "${var.version}-${var.arch}"
     ]
   }
 }

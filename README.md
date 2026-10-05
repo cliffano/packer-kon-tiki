@@ -12,7 +12,7 @@ Packer Kon-Tiki is a Packer builder of Docker image containing the software need
 Installation
 ------------
 
-Pull Kon-Tiki Docker image from Docker Hub:
+Pull Kon-Tiki Docker image from Docker Hub, the image is available for `linux/amd64` and `linux/arm64` architectures:
 
 ```shell
 docker pull cliffano/kon-tiki
@@ -24,6 +24,12 @@ Or alternatively, you can create the Docker image:
 git clone https://github.com/cliffano/packer-kon-tiki
 cd packer-kon-tiki
 make build-docker-kon-tiki
+```
+
+The image is built for the host architecture by default, the architecture can be specified explicitly using `arch` (`amd64` or `arm64`):
+
+```shell
+make build-docker-kon-tiki arch=arm64
 ```
 
 An image with `cliffano/kon-tiki` repository and `latest` tag should show up:

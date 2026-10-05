@@ -3,12 +3,19 @@ name: CI
 on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
-    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        include:
+          - runner: ubuntu-24.04
+            arch: amd64
+          - runner: ubuntu-24.04-arm
+            arch: arm64
+    runs-on: ${{ matrix.runner }}
     steps:
       - uses: actions/checkout@v7
         with:
           set-safe-directory: ${{ github.workspace }}
       - uses: cliffano/command-docker-action@v2.0.0
         with:
-          image: cliffano/studio:3.2.0
-          command: 'make deps ci'
+          image: cliffano/studio:4.0.0
+          command: 'make deps ci arch=${{ matrix.arch }}'

@@ -1,4 +1,6 @@
 version ?= 4.0.1-pre.0
+# Target image architecture (amd64 or arm64), defaults to the host architecture
+arch ?= $(shell uname -m | sed -e 's/x86_64/amd64/' -e 's/aarch64/arm64/')
 
 ci: clean stage deps lint build-docker-kon-tiki build-docker-kon-tiki-private
 
@@ -44,6 +46,7 @@ build-docker-kon-tiki:
 		PACKER_TMP_DIR=/tmp/packer-tmp/ \
 		packer build \
 		-var-file=conf/docker-kon-tiki.json \
+		-var arch=$(arch) \
 		templates/packer/docker-kon-tiki.pkr.hcl
 
 build-docker-kon-tiki-private:
@@ -53,14 +56,29 @@ build-docker-kon-tiki-private:
 		PACKER_TMP_DIR=/tmp/packer-tmp/ \
 		packer build \
 		-var-file=conf/docker-kon-tiki.json \
+		-var arch=$(arch) \
 		templates/packer/docker-kon-tiki-private.pkr.hcl
 
 publish-docker-kon-tiki:
-	docker push cliffano/kon-tiki:latest
-	docker image push cliffano/kon-tiki:$(version)
+	docker image push cliffano/kon-tiki:$(version)-$(arch)
+
+# Combine the per-architecture images into multi-arch version and latest tags
+publish-docker-kon-tiki-manifest:
+	docker buildx imagetools create \
+		--tag cliffano/kon-tiki:$(version) \
+		--tag cliffano/kon-tiki:latest \
+		cliffano/kon-tiki:$(version)-amd64 \
+		cliffano/kon-tiki:$(version)-arm64
 
 publish-docker-kon-tiki-private:
-	docker push ghcr.io/cliffano/kon-tiki:latest
-	docker image push ghcr.io/cliffano/kon-tiki:$(version)
+	docker image push ghcr.io/cliffano/kon-tiki:$(version)-$(arch)
 
-.PHONY: ci clean stage init rmdeps deps deps-upgrade lint build-docker-kon-tiki build-docker-kon-tiki-private publish-docker-kon-tiki publish-docker-kon-tiki-private
+# Combine the per-architecture images into multi-arch version and latest tags
+publish-docker-kon-tiki-private-manifest:
+	docker buildx imagetools create \
+		--tag ghcr.io/cliffano/kon-tiki:$(version) \
+		--tag ghcr.io/cliffano/kon-tiki:latest \
+		ghcr.io/cliffano/kon-tiki:$(version)-amd64 \
+		ghcr.io/cliffano/kon-tiki:$(version)-arm64
+
+.PHONY: ci clean stage init rmdeps deps deps-upgrade lint build-docker-kon-tiki build-docker-kon-tiki-private publish-docker-kon-tiki publish-docker-kon-tiki-manifest publish-docker-kon-tiki-private publish-docker-kon-tiki-private-manifest

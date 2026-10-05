@@ -6,7 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add arm64 Docker image alongside amd64, published as multi-arch image
+
 ### Changed
+- Upgrade source to Base 2.0.0
 - Upgrade AWS CLI to v2
 - Upgrade min Docker Packer Plugin to 1.1.4
 - Upgrade min Ansible Packer Plugin to 1.1.6

@@ -20,9 +20,15 @@ variable "version" {
   default = "x.x.x"
 }
 
+variable "arch" {
+  type    = string
+  default = "amd64"
+}
+
 source "docker" "kon-tiki" {
-  image  = "cliffano/base:0.10.0"
-  commit = true
+  image    = "cliffano/base:2.0.0"
+  platform = "linux/${var.arch}"
+  commit   = true
   run_command = [
     "-d",
     "-i",
@@ -111,7 +117,7 @@ build {
     repository = "cliffano/kon-tiki"
     tags        = [
       "latest",
-      var.version
+      "${var.version}-${var.arch}"
     ]
   }
 }
