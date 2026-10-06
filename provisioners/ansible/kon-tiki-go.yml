@@ -1,5 +1,6 @@
 ---
-- hosts: localhost
+- name: Provision Go tools and libraries
+  hosts: localhost
 
   vars:
     go_ver: 1.25.0
@@ -18,5 +19,10 @@
 
   tasks:
 
-    - ansible.builtin.command: go install github.com/mrtazz/checkmake/cmd/checkmake@latest
-    - ansible.builtin.command: go install github.com/tomwright/dasel/v2/cmd/dasel@master
+    - name: Install checkmake
+      ansible.builtin.command: go install github.com/mrtazz/checkmake/cmd/checkmake@latest
+      changed_when: true
+
+    - name: Install dasel
+      ansible.builtin.command: go install github.com/tomwright/dasel/v2/cmd/dasel@master
+      changed_when: true

@@ -1,19 +1,26 @@
 ---
-- hosts: localhost
+- name: Provision Python tools and libraries
+  hosts: localhost
 
   tasks:
 
-    - ansible.builtin.apt:
+    - name: Install python3-venv
+      ansible.builtin.apt:
         pkg:
           - python3-venv
 
-    - ansible.builtin.get_url:
+    - name: Download AWS CLI installer
+      ansible.builtin.get_url:
         url: "https://awscli.amazonaws.com/awscli-exe-linux-{{ ansible_architecture }}.zip"
         dest: /tmp/awscliv2.zip
+        mode: '0644'
 
-    - ansible.builtin.unarchive:
+    - name: Extract AWS CLI installer
+      ansible.builtin.unarchive:
         src: /tmp/awscliv2.zip
         dest: /tmp
         remote_src: true
 
-    - ansible.builtin.command: /tmp/aws/install --update
+    - name: Install AWS CLI
+      ansible.builtin.command: /tmp/aws/install --update
+      changed_when: true

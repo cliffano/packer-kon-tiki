@@ -1,14 +1,17 @@
 ---
-- hosts: localhost
+- name: Provision common tools and libraries
+  hosts: localhost
 
   tasks:
 
-    - ansible.builtin.apt:
+    - name: Install media packages
+      ansible.builtin.apt:
         pkg:
           - ffmpeg
           - imagemagick
 
-    - ansible.builtin.file:
+    - name: Create local bin directory
+      ansible.builtin.file:
         path: /root/.local/bin
         state: directory
         mode: '0755'
