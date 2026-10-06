@@ -20,7 +20,7 @@
   tasks:
 
     - name: Install checkmake
-      ansible.builtin.command: go install github.com/mrtazz/checkmake/cmd/checkmake@latest
+      ansible.builtin.command: go install github.com/checkmake/checkmake/cmd/checkmake@latest
       changed_when: true
 
     - name: Install dasel

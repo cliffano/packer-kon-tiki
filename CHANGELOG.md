@@ -17,6 +17,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Decouple deps target from ci
 - Shift GitHub actions entrypoint to workflows
 
+### Fixed
+- Fix checkmake provisioning by switching from mrtazz to checkmake
+
 ## 4.0.0 - 2025-12-30
 ### Added
 - Add Ansible lint validation
